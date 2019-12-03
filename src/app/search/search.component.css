@@ -1,0 +1,9 @@
+h1, h2 {
+  font-family: 'Mountains of Christmas', cursive;
+}
+div.card.border-primary.mb-3 {
+  margin: 0 auto;
+}
+h1, h2{
+  text-align: center;
+}
