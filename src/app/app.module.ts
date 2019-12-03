@@ -9,11 +9,13 @@ import { ApiService } from './api.service';
 import { SearchService } from './search.service';
 import { SearchComponent } from './search/search.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ResultComponent } from './result/result.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchComponent
+    SearchComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,
