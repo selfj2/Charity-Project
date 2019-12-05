@@ -10,12 +10,15 @@ import { SearchService } from './search.service';
 import { SearchComponent } from './search/search.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ResultComponent } from './result/result.component';
+import { CharityItemComponent } from './charity-item/charity-item.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    ResultComponent
+    ResultComponent,
+    CharityItemComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from '../search.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -16,10 +18,22 @@ export class SearchComponent implements OnInit {
   // mailingAddress: any[] = [
   //   { stateOrProvince: "MI", city: "Detroit", postalCode: "48215-2934" },
   //   ];
-
-  constructor() { }
+navbarOpen = false;
+toggleNavbar() {
+  this.navbarOpen = !this.navbarOpen;
+}
+  
+  constructor(private search: SearchService, private router: Router) { }
 
   ngOnInit() {
   }
 
+  searchCharities(form) {
+    this.search.setOptions(form.value);
+
+    this.router.navigate(["charity-results"]);
+  }
+
 }
+
+
