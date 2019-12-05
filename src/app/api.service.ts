@@ -8,22 +8,22 @@ import { SearchInterface } from './search-interface';
 export class ApiService {
   apikey: string = "f8770df6cb9b934e5ac6b7d2dcafee9e";
   appid: string = "90e661c1";
-  apiUrl= "https://api.data.charitynavigator.org/v2";
+  apiUrl= "https://api.data.charitynavigator.org/v2/categories";
 
   constructor(private http: HttpClient) { }
 
-  getData(options: SearchInterface) {
-    let searchUrl = this.apiUrl + `?q=${options.category}&app_id=${this.appid}&app_key=${this.apikey}&to=24`;
-  
+  getData(options: string) {
+    let searchUrl = this.apiUrl + `?q=${options}&app_id=${this.appid}&app_key=${this.apikey}&to=24`;
+  console.log(searchUrl)
 
-  if (options.mailingAddress) {
-    searchUrl += `&charity=${options.mailingAddress}`;
-  }
+  // if (options.mailingAddress) {
+  //   searchUrl += `&charity=${options.mailingAddress}`;
+  // }
 
  
-  if (options.categoryName) {
-    searchUrl += `&charity=${options.categoryName}`;
-  }
+  // if (options.categoryName) {
+  //   searchUrl += `&charity=${options.categoryName}`;
+  // }
 
   return this.http.get(searchUrl);
   }

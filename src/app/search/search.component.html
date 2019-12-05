@@ -46,17 +46,17 @@
                 <h2 class="card-title">How to Help</h2>
                 <p class="card-text"></p>
                 <div class="form-group">
-                    <select class="custom-select">
+                    <select class="custom-select" [(ngModel)]="selectValue">
                       <option selected="">Choose your charity category</option>
                       <!-- #searchForm="ngForm" (ngSubmit)="searchCharities(searchForm)" -->
-                      <option value="1" *ngFor="let option of charityOptions" [value]="option.value" >
+                      <option value="1" *ngFor="let option of charityOptions" [value]="option.categoryName" >
                         {{ option.name }}
                       </option>
                       <!-- <option value="2">Toys</option>
                       <option value="3">Clothes</option> -->
                     </select>
                   </div>
-                <button type="button" class="btn btn-primary btn-lg btn-block" routerLink="/results">Enter</button>
+                <button type="button" class="btn btn-primary btn-lg btn-block" routerLink="/results" (click)="searchCharities(selectValue)">Enter</button>
               </div>
         </div>
         <!-- <div class="card border-primary mb-3" style="max-width: 30rem;">

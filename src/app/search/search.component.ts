@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../search.service';
 import { Router } from '@angular/router';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-search',
@@ -29,7 +30,8 @@ toggleNavbar() {
   }
 
   searchCharities(form) {
-    this.search.setOptions(form.value);
+    console.log(form);
+    this.search.setOptions(form);
 
     this.router.navigate(["charity-results"]);
   }

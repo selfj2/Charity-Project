@@ -7,16 +7,16 @@ import { ApiService } from './api.service';
 })
 export class SearchService {
 
-  private searchInterface: SearchInterface; 
+  // private searchInterface: SearchInterface; 
   private searchResults: any[] = []; 
 
   constructor(private api: ApiService) { }
 
  
-  setOptions(options: SearchInterface) {
-    this.searchInterface = options;
+  setOptions(options: string) {
+    // this.searchInterface = options;
     this.searchResults = []; 
-    this.performSearch();
+    this.performSearch(options);
   }
 
   
@@ -35,14 +35,16 @@ export class SearchService {
   }
 
 
-  private performSearch(): void {
-    this.api.getData(this.searchInterface).subscribe(this.handleResponse);
+  private performSearch(options:string): void {
+    this.api.getData(options).subscribe(this.handleResponse);
   }
 
   
   private handleResponse = (response: any): void => {
-    for (let hit of response["hits"]) {
-      this.searchResults.push(hit.charity);
-    }
+    console.log(response);
+    this.searchResults = response;
+    // for (let hit of response["hits"]) {
+    //   this.searchResults.push(hit.charity);
+    // }
   }
 }
