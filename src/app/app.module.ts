@@ -10,17 +10,15 @@ import { SearchService } from './search.service';
 import { SearchComponent } from './search/search.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ResultComponent } from './result/result.component';
+import { CharityItemComponent } from './charity-item/charity-item.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-<<<<<<< HEAD
-   
-=======
-    ResultComponent
->>>>>>> 539693d5a78b43cc49bc559c4e4819441f1ece59
+    ResultComponent,
+    CharityItemComponent
   ],
   imports: [
     BrowserModule,

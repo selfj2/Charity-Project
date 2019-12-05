@@ -48,14 +48,15 @@
                 <div class="form-group">
                     <select class="custom-select">
                       <option selected="">Choose your charity category</option>
-                      <option value="1" *ngFor="let option of charityOptions" [value]="option.value">
+                      <!-- #searchForm="ngForm" (ngSubmit)="searchCharities(searchForm)" -->
+                      <option value="1" *ngFor="let option of charityOptions" [value]="option.value" >
                         {{ option.name }}
                       </option>
                       <!-- <option value="2">Toys</option>
                       <option value="3">Clothes</option> -->
                     </select>
                   </div>
-                <button type="button" class="btn btn-primary btn-lg btn-block">Enter</button>
+                <button type="button" class="btn btn-primary btn-lg btn-block" routerLink="/results">Enter</button>
               </div>
         </div>
         <!-- <div class="card border-primary mb-3" style="max-width: 30rem;">

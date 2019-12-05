@@ -13,7 +13,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getData(options: SearchInterface) {
-    let searchUrl = this.apiUrl + `?q=${options.searchWord}&app_id=${this.appid}&app_key=${this.apikey}&to=24`;
+    let searchUrl = this.apiUrl + `?q=${options.category}&app_id=${this.appid}&app_key=${this.apikey}&to=24`;
   
 
   if (options.mailingAddress) {

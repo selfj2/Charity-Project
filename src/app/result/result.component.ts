@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from '../search.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-result',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultComponent implements OnInit {
 
-  constructor() { }
+  charityResults: any[] = [];
+
+  constructor(private search: SearchService, private router: Router) { }
 
   ngOnInit() {
+    this.getCharities();
+  }
+
+  getCharities() {
+    this.charityResults = this.search.getSearchResults();
   }
 
 }
