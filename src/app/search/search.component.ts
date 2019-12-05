@@ -16,10 +16,16 @@ export class SearchComponent implements OnInit {
   // mailingAddress: any[] = [
   //   { stateOrProvince: "MI", city: "Detroit", postalCode: "48215-2934" },
   //   ];
-
+navbarOpen = false;
+toggleNavbar() {
+  this.navbarOpen = !this.navbarOpen;
+}
+  
   constructor() { }
 
   ngOnInit() {
   }
 
 }
+
+
