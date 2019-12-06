@@ -1,6 +1,8 @@
-body, html {
+body,
+html {
   height: 100%;
 }
+
 .bg {
   /* The image used */
   background-image: url("https://live.staticflickr.com/65535/49161397362_a3742adb94_k.jpg");
@@ -14,31 +16,44 @@ body, html {
   background-size: cover;
 }
 
-h1, h2, p, footer.blockquote-footer {
+h1,
+h2,
+p,
+footer.blockquote-footer {
   font-family: 'Mountains of Christmas', cursive;
 }
 
-h1{
+h1 {
   font-size: 80px;
 }
 
-div.jumbotron{
-  background-color: rgba(255,255,255,0.5);
+div.jumbotron {
+  background-color: rgba(255, 255, 255, 0.5);
 }
+
 div.card.border-primary.mb-3 {
   margin: 0 auto;
 }
-h1, h2{
+
+h1,
+h2 {
   text-align: center;
 }
 
-.red-overwrite, button.btn-primary.btn-lg.btn-block {
+.red-overwrite,
+button.btn-primary.btn-lg.btn-block {
   background: #CB201A !important;
 }
 
-button.btn-primary.btn-lg.btn-block, a.navbar-brand {
+.input {
+  border: 1px solid black;
+}
+
+button.btn-primary.btn-lg.btn-block,
+a.navbar-brand {
   color: #FFDE01;
 }
+
 footer.blockquote-footer {
   color: black;
 }

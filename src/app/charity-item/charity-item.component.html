@@ -1,1 +1,26 @@
-<p>charity-item works!</p>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{ charity.charityName }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">
+      {{ charity.irsClassification.nteeClassification }}
+    </h6>
+    <p class="card-text">
+      {{ charity.mailingAddress.streetAddress1 }},
+      {{ charity.mailingAddress.city }},
+      {{ charity.mailingAddress.stateOrProvince }},
+      {{ charity.mailingAddress.postalCode }}
+    </p>
+    <a
+      href="{{ charity.websiteURL }}"
+      class="card-link"
+      *ngIf="charity.websiteURL"
+      >More Info</a
+    >
+    <a
+      href="{{ charity.organization.charityNavigatorURL }}"
+      class="card-link"
+      *ngIf="!charity.websiteURL"
+      >More Info</a
+    >
+  </div>
+</div>

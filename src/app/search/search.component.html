@@ -1,88 +1,87 @@
 <body>
-    <div class="bg">
+  <div class="bg">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary red-overwrite">
+        <a class="navbar-brand" href="#">Santa's Motor City Helpers</a>
+        <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-<div class="container">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary red-overwrite">
-    <a class="navbar-brand" href="#">Santa's Motor City Helpers</a>
-    <button class="navbar-toggler" type="button" 
-    (click)="toggleNavbar()">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarColor01"
-    [ngClass]="{ 'show': navbarOpen }">
-      <ul class="navbar-nav mr-auto">
-        
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-          <li class="nav-item">
+        <div
+          class="collapse navbar-collapse"
+          id="navbarColor01"
+          [ngClass]="{ show: navbarOpen }"
+        >
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"
+                >Home<span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#">About</a>
             </li>
-      </ul>
-      
-    </div>
-  </nav>
-  
-    <div class="jumbotron">
-      <h1>Welcome!</h1>
-      <h2>With your support, we can help families in need in Metro Detroit.</h2>
-    </div>
-    <div class="panel panel-primary">
+          </ul>
+        </div>
+      </nav>
+
+      <div class="jumbotron">
+        <h1>Welcome!</h1>
+        <h2>
+          With your support, we can help families in need in Metro Detroit.
+        </h2>
+      </div>
+      <div class="panel panel-primary">
         <blockquote class="blockquote text-right">
-            <p class="mb-0">"We make a living by what we get, but we make a life by what we give."</p>
-            <footer class="blockquote-footer">Winston Churchill</footer>
-          </blockquote>
-      <div class="panel-heading">
-        <!-- <h2>How to Help</h2> -->
-    </div>
-    <div class="panel-body">
-      
+          <p class="mb-0">
+            "We make a living by what we get, but we make a life by what we
+            give."
+          </p>
+          <footer class="blockquote-footer">Winston Churchill</footer>
+        </blockquote>
+        <div class="panel-heading">
+          <!-- <h2>How to Help</h2> -->
+        </div>
+        <div class="panel-body">
           <div class="card border-primary mb-3" style="max-width: 30rem;">
             <div class="card-body">
-                <h2 class="card-title">How to Help</h2>
-                <p class="card-text"></p>
-                <div class="form-group">
-                    <select class="custom-select" [(ngModel)]="selectValue">
-                      <option selected="">Choose your charity category</option>
-                      <!-- #searchForm="ngForm" (ngSubmit)="searchCharities(searchForm)" -->
-                      <option value="1" *ngFor="let option of charityOptions" [value]="option.categoryName" >
-                        {{ option.name }}
-                      </option>
-                      <!-- <option value="2">Toys</option>
-                      <option value="3">Clothes</option> -->
-                    </select>
-                  </div>
-                <button type="button" class="btn btn-primary btn-lg btn-block" routerLink="/results" (click)="searchCharities(selectValue)">Enter</button>
+              <h2 class="card-title">How to Help</h2>
+              <p class="card-text"></p>
+              <div class="form-group">
+                <!-- on submit call the searchCharities() and pass in the ref to the form -->
+                <form #form="ngForm" (ngSubmit)="searchCharities(form)">
+                  <select class="custom-select" name="search" ngModel>
+                    <option value="Food">Food</option>
+                    <option value="Toys">Toys</option>
+                    <option value="Clothes">Clothes</option>
+                  </select>
+                  <select class="custom-select" name="state" ngModel>
+                    <option value="{{ state }}" *ngFor="let state of states">{{
+                      state
+                    }}</option>
+                  </select>
+                  <label for="city">
+                    <input
+                      class="input"
+                      type="text"
+                      name="city"
+                      id="city"
+                      placeholder="City"
+                      ngModel
+                    />
+                  </label>
+                  <button class="btn btn-primary btn-lg btn-block">
+                    Submit
+                  </button>
+                </form>
               </div>
-        </div>
-        <!-- <div class="card border-primary mb-3" style="max-width: 30rem;">
-            <div class="card-body">
-              <h4 class="card-title">Donate</h4>
-              <p class="card-text">No contribution is too small to help.</p>
-              <button type="button" class="btn btn-primary btn-lg btn-block">Donate Now</button>
             </div>
           </div>
-            <div class="card border-primary mb-3" style="max-width: 30rem;">
-            <div class="card-body">
-                <h4 class="card-title">Volunteer</h4>
-                <p class="card-text">There are plenty of opportunities to get involved.</p>
-                <button type="button" class="btn btn-primary btn-lg btn-block">Sign Up</button>
-              </div>
-            </div>
-        <div class="card border-primary mb-3" style="max-width: 30rem;">
-            <div class="card-body">
-                <h4 class="card-title">Our Vision</h4>
-                <p class="card-text">We envision communities that work together to end hunger and increase individual, neighborhood, economic, and environmental health.</p>
-                <button type="button" class="btn btn-primary btn-lg btn-block">Learn More</button>
-              </div>
-        </div> -->
-       
-    </div>
-    </div>
+        </div>
+      </div>
     </div>
   </div>
-  </body>
+</body>
