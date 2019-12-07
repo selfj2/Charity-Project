@@ -8,7 +8,7 @@ export class ApiService {
   apikey: string = "f8770df6cb9b934e5ac6b7d2dcafee9e";
   appid: string = "90e661c1";
   apiUrl = "https://api.data.charitynavigator.org/v2/organizations";
-  pageSize: number = 25;
+  pageSize: number = 50;
 
   constructor(private http: HttpClient) {}
 

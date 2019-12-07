@@ -34,11 +34,15 @@
   </div>
 </div>
 
-<div class="component-container">
+<div class="component-container" *ngIf = "charityResults">
   <div class="charity-results-container">
     <app-charity-item
       *ngFor="let charity of charityResults"
       [charity]="charity"
     ></app-charity-item>
   </div>
+</div>
+
+<div class="component-container" *ngIf="!charityResults[0]">
+  <h2>No results found</h2>
 </div>

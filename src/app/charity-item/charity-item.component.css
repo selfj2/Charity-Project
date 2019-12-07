@@ -1,1 +1,10 @@
 
+.card {
+  height: 220px;
+  width: auto;
+  margin: 10px;
+  -webkit-box-shadow: 3px 6px 14px -4px rgba(0,0,0,0.57);
+  -moz-box-shadow: 3px 6px 14px -4px rgba(0,0,0,0.57);
+  box-shadow: 3px 6px 14px -4px rgba(0,0,0,0.57);
+}
+

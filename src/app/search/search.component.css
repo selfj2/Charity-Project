@@ -45,9 +45,15 @@ button.btn-primary.btn-lg.btn-block {
   background: #CB201A !important;
 }
 
-.input {
-  border: 1px solid black;
+.input, select{
+  border: 2px solid #ffd704;
+  border-radius: 3px;
 }
+
+select {
+  width: 180.6px;
+}
+
 
 button.btn-primary.btn-lg.btn-block,
 a.navbar-brand {
@@ -57,3 +63,5 @@ a.navbar-brand {
 footer.blockquote-footer {
   color: black;
 }
+
+
