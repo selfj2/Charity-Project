@@ -1,11 +1,44 @@
-<p>result works!</p>
+<div class="bg">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary red-overwrite">
+      <a class="navbar-brand" href="#">Santa's Motor City Helpers</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarColor01"
+        aria-controls="navbarColor01"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-<!-- <div class="component-container"> -->
-	<!-- <div class="cat-box">
-	<img *ngIf="recipeResults.length === 0" src="assets/cat_hungry.png" alt="hungry-cat">
-    <span *ngIf="recipeResults.length === 0">Nothing to see here</span>
-	</div> -->
-    <!-- <div class="charity-results-container">
-        <charity-item *ngFor="let charity of charityResults" [charity]="charity"></charity-item>
-    </div>
-</div> -->
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home<span class="sr-only">(current)</span></a
+            >
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<div class="component-container">
+  <div class="charity-results-container">
+    <app-charity-item
+      *ngFor="let charity of charityResults"
+      [charity]="charity"
+    ></app-charity-item>
+  </div>
+</div>

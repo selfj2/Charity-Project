@@ -1,30 +1,28 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { SearchInterface } from './search-interface';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class ApiService {
   apikey: string = "f8770df6cb9b934e5ac6b7d2dcafee9e";
   appid: string = "90e661c1";
-  apiUrl= "https://api.data.charitynavigator.org/v2";
+  apiUrl = "https://api.data.charitynavigator.org/v2/organizations";
+  pageSize: number = 25;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getData(options: SearchInterface) {
-    let searchUrl = this.apiUrl + `?q=${options.category}&app_id=${this.appid}&app_key=${this.apikey}&to=24`;
-  
-
-  if (options.mailingAddress) {
-    searchUrl += `&charity=${options.mailingAddress}`;
-  }
-
- 
-  if (options.categoryName) {
-    searchUrl += `&charity=${options.categoryName}`;
-  }
-
-  return this.http.get(searchUrl);
+  getData(queryParams: any): any {
+    // construct an object used to define the parameters that will append to the base URL
+    let parameters: any = {
+      app_key: this.apikey,
+      app_id: this.appid,
+      pageSize: this.pageSize,
+      search: queryParams.search,
+      state: queryParams.state,
+      city: queryParams.city
+    };
+    console.log(parameters);
+    return this.http.get(this.apiUrl, { params: parameters });
   }
 }
