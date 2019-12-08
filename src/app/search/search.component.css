@@ -29,6 +29,7 @@ h1 {
 
 div.jumbotron {
   background-color: rgba(255, 255, 255, 0.5);
+  padding-bottom: 5px;
 }
 
 div.card.border-primary.mb-3 {
@@ -62,6 +63,15 @@ a.navbar-brand {
 
 footer.blockquote-footer {
   color: black;
+}
+
+.quote {
+  font-family: sans-serif;
+  font-size: .8em;
+  color: rgb(155, 155, 155);
+  font-style: italic;
+  line-height: 1em;
+  text-align: center;
 }
 
 
