@@ -11,6 +11,7 @@ import { ApiService } from "../api.service";
 })
 export class ResultComponent implements OnInit {
   charityResults: any[] = [];
+  // test: boolean = false;
 
   constructor(private search: ApiService, private router: ActivatedRoute) {}
 

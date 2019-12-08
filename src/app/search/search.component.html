@@ -31,7 +31,7 @@
       <div class="jumbotron">
         <h1>Welcome!</h1>
         <h2>
-          With your support, we can help families in need in Metro Detroit.
+          With your support, we can help families in need throughout the US.
         </h2>
       </div>
       <div class="panel panel-primary">
@@ -43,27 +43,48 @@
           <footer class="blockquote-footer">Winston Churchill</footer>
         </blockquote>
         <div class="panel-heading">
-          <!-- <h2>How to Help</h2> -->
         </div>
         <div class="panel-body">
           <div class="card border-primary mb-3" style="max-width: 30rem;">
             <div class="card-body">
-              <h2 class="card-title">How to Help</h2>
+              <h2 class="card-title">Find a Charity</h2>
               <p class="card-text"></p>
               <div class="form-group">
                 <!-- on submit call the searchCharities() and pass in the ref to the form -->
                 <form #form="ngForm" (ngSubmit)="searchCharities(form)">
+                  <!-- <label>Select a Charity Category</label>
                   <select class="custom-select" name="search" ngModel>
                     <option value="Food">Food</option>
                     <option value="Toys">Toys</option>
                     <option value="Clothes">Clothes</option>
-                  </select>
+                    <option value="Health">Health</option>
+                    <option value="Elder">Elders / Seniors</option>
+                    <option value="Childcare">Childcare</option>
+                  </select> -->
+
+                  <label for="search"> Search a Category
+                      <br>
+                      <input
+                        class="input"
+                        type="text"
+                        name="search"
+                        id="Category"
+                        placeholder="Category"
+                        ngModel
+                      />
+                    </label>
+
+                  <br><br>
+                  <label>Select which US State you want to search</label>
+                  <br>
                   <select class="custom-select" name="state" ngModel>
                     <option value="{{ state }}" *ngFor="let state of states">{{
                       state
                     }}</option>
                   </select>
-                  <label for="city">
+                  <br><br>
+                  <label for="city"> Select a City
+                    <br>
                     <input
                       class="input"
                       type="text"

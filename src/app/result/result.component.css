@@ -59,3 +59,10 @@ footer.blockquote-footer {
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.loading {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+
+}
