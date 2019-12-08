@@ -50,8 +50,8 @@ button.btn-primary.btn-lg.btn-block {
   border-radius: 3px;
 }
 
-select {
-  width: 180.6px;
+select, .input, label {
+  width: 100%;
 }
 
 

@@ -63,5 +63,6 @@ footer.blockquote-footer {
 .loading {
   display: block;
   margin: 0 auto;
+  width: 50%;
 
 }
