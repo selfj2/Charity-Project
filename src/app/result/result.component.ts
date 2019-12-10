@@ -13,6 +13,11 @@ export class ResultComponent implements OnInit {
   charityResults: any[] = [];
   // test: boolean = false;
 
+  navbarOpen = false;
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
+  }
+
   constructor(private search: ApiService, private router: ActivatedRoute) {}
 
   ngOnInit() {
