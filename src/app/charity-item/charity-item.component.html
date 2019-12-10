@@ -10,6 +10,8 @@
       {{ charity.mailingAddress.stateOrProvince }},
       {{ charity.mailingAddress.postalCode }}
     </p>
+    <div class="card-footer">
+      <small class="text-muted">
     <a
       href="{{ charity.websiteURL }}"
       class="card-link"
@@ -22,5 +24,7 @@
       *ngIf="!charity.websiteURL"
       >More Info</a
     >
+  </small>
+  </div>
   </div>
 </div>
