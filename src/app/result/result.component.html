@@ -2,16 +2,15 @@
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary red-overwrite">
       <a class="navbar-brand" href="#">Santa's Motor City Helpers</a>
-      <button
-        class="navbar-toggler"
-        type="button" (click)="toggleNavbar()">
+      <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div 
-      class="collapse navbar-collapse" 
-      id="navbarColor01"
-      [ngClass]="{ show: navbarOpen }">
+      <div
+        class="collapse navbar-collapse"
+        id="navbarColor01"
+        [ngClass]="{ show: navbarOpen }"
+      >
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#"
@@ -31,7 +30,9 @@
   </div>
 </div>
 
-<div class="component-container" *ngIf = "charityResults">
+<google-map></google-map>
+
+<div class="component-container" *ngIf="charityResults">
   <div class="charity-results-container">
     <app-charity-item
       *ngFor="let charity of charityResults"
@@ -43,5 +44,5 @@
 <div class="component-container" *ngIf="!charityResults[0]">
   <!-- <h2>No results found</h2> -->
   <!-- <img src="https://imageshack.com/a/img921/7250/11SNpq.gif" class="loading"> -->
-  <img src="https://imageshack.com/a/img922/9852/nLNOJK.gif" class="loading">
+  <img src="https://imageshack.com/a/img922/9852/nLNOJK.gif" class="loading" />
 </div>
