@@ -1,3 +1,4 @@
+ @import url('https://fonts.googleapis.com/css?family=Mountains+of+Christmas&display=swap');
 body,
 html {
   height: 100%;
@@ -59,6 +60,7 @@ select, .input, label {
 button.btn-primary.btn-lg.btn-block,
 a.navbar-brand {
   color: #FFDE01;
+  font-family: 'Mountains of Christmas', cursive;
 }
 
 footer.blockquote-footer {
