@@ -1,3 +1,5 @@
+/* @import url('https://fonts.googleapis.com/css?family=Mountains+of+Christmas&display=swap'); */
+
 body,
 html {
   height: 100%;
@@ -18,8 +20,10 @@ html {
 h1,
 h2,
 p,
-footer.blockquote-footer {
-  font-family: ‘Mountains of Christmas’, cursive;
+footer.blockquote-footer,
+a.navbar-brand,
+button.btn-primary.btn-lg.btn-block{
+  font-family: "Mountains of Christmas", cursive;
 }
 
 h1 {
