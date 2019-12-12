@@ -81,13 +81,12 @@ export class SearchComponent implements OnInit {
     '"The closest thing to being cared for is to care for someone else." -Carson McCullers',
     '"Indifference and neglect often do much more damage than outright dislike." -J. K. Rowling',
     '"Never believe that a few caring people can’t change the world. For, indeed, that’s all who ever have." -Margaret Mead',
-    '"Want of care does us more damage than want of knowledge." -Benjamin Franklin',
+    '"Want of care does us more damage than want of knowledge." -Benjamin Franklin'
+  ];
 
-];
-
-randomQuote: any = `${this.quotes[Math.floor(Math.random() * this.quotes.length)]}`;
-
-
+  randomQuote: any = `${
+    this.quotes[Math.floor(Math.random() * this.quotes.length)]
+  }`;
 
   navbarOpen = false;
   toggleNavbar() {

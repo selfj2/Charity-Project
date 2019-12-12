@@ -3,17 +3,9 @@ html {
   height: 100%;
 }
 
-/* .bg {
-  /* The image used */
-/* background-image: url(“https://live.staticflickr.com/65535/49161397362_a3742adb94_k.jpg(326 kB) https: //live.staticflickr.com/65535/49161397362_a3742adb94_k.jpg
-    ”); */
-/* Full height */
-/* height: 100%; */
-/* Center and scale the image nicely */
-/* background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
-/* } */
+/* .jumbotron {
+  background-color: blue;
+} */
 
 h1,
 h2,

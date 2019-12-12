@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Mountains+of+Christmas&display=swap");
+
 body,
 html {
   height: 100%;
@@ -20,7 +22,7 @@ h1,
 h2,
 p,
 footer.blockquote-footer {
-  font-family: 'Mountains of Christmas', cursive;
+  font-family: "Mountains of Christmas", cursive;
 }
 
 h1 {
@@ -43,22 +45,24 @@ h2 {
 
 .red-overwrite,
 button.btn-primary.btn-lg.btn-block {
-  background: #CB201A !important;
+  background: #cb201a !important;
 }
 
-.input, select{
+.input,
+select {
   border: 2px solid #ffd704;
   border-radius: 3px;
 }
 
-select, .input, label {
+select,
+.input,
+label {
   width: 100%;
 }
 
-
 button.btn-primary.btn-lg.btn-block,
 a.navbar-brand {
-  color: #FFDE01;
+  color: #ffde01;
 }
 
 footer.blockquote-footer {
@@ -67,11 +71,9 @@ footer.blockquote-footer {
 
 .quote {
   font-family: sans-serif;
-  font-size: .8em;
+  font-size: 0.8em;
   color: rgb(155, 155, 155);
   font-style: italic;
   line-height: 1em;
   text-align: center;
 }
-
-

@@ -14,6 +14,7 @@ import { CharityItemComponent } from "./charity-item/charity-item.component";
 import { ContactComponent } from "./contact/contact.component";
 import { AboutComponent } from "./about/about.component";
 import { MapComponent } from "./map/map.component";
+import { LandingPageComponent } from "./landing-page/landing-page.component";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MapComponent } from "./map/map.component";
     CharityItemComponent,
     ContactComponent,
     AboutComponent,
-    MapComponent
+    MapComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,

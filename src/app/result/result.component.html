@@ -30,7 +30,28 @@
   </div>
 </div>
 
-<google-map></google-map>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <google-map
+      height="500px"
+      width="100%"
+      [zoom]="zoom"
+      [center]="center"
+      [options]="options"
+    >
+      <map-marker
+        *ngFor="let marker of markers"
+        [position]="marker.position"
+        [label]="marker.label"
+        [title]="marker.title"
+        [options]="marker.options"
+      >
+      </map-marker>
+    </google-map>
+    <!-- <h1 class="display-4">Fluid jumbotron</h1>
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
+  </div>
+</div>
 
 <div class="component-container" *ngIf="charityResults">
   <div class="charity-results-container">
