@@ -8,3 +8,11 @@
   box-shadow: 3px 6px 14px -4px #cb201a;
 }
 
+div.card-body {
+  position: relative;
+}
+
+div.card-footer {
+  position: absolute;
+  bottom: 5px;
+}
