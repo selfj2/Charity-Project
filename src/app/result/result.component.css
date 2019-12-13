@@ -1,17 +1,28 @@
+/* @import url('https://fonts.googleapis.com/css?family=Mountains+of+Christmas&display=swap'); */
+
 body,
 html {
   height: 100%;
 }
 
-/* .jumbotron {
-  background-color: blue;
-} */
+.bg {
+
+  background-image: url("https://live.staticflickr.com/65535/49161397362_a3742adb94_k.jpg(326 kB) https: //live.staticflickr.com/65535/49161397362_a3742adb94_k.jpg");
+
+  height: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 h1,
 h2,
 p,
-footer.blockquote-footer {
-  font-family: ‘Mountains of Christmas’, cursive;
+footer.blockquote-footer,
+a.navbar-brand,
+button.btn-primary.btn-lg.btn-block {
+  font-family: "Mountains of Christmas", cursive;
 }
 
 h1 {
@@ -56,5 +67,9 @@ footer.blockquote-footer {
   display: block;
   margin: 0 auto;
   width: 50%;
+  margin-bottom: 200px;
+}
 
+i.fa.fa-snowflake-o.fa-lg.text-primary.mr-2::before {
+  color: white;
 }
