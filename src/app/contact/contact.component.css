@@ -1,0 +1,127 @@
+body,
+html {
+  height: 100%;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("https://live.staticflickr.com/65535/49161397362_a3742adb94_k.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1,
+h2,
+p,
+footer.blockquote-footer,
+a.navbar-brand,
+button.btn-primary.btn-lg.btn-block {
+  font-family: "Mountains of Christmas", cursive;
+}
+
+h2 {
+  font-size: 80px;
+  padding: 0;
+}
+h1.display-4.font-weight-bold {
+  margin: 0px 0px 15px;
+}
+
+div.jumbotron {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0;
+}
+
+div.card.border-primary.mb-3 {
+  margin: 0 auto;
+}
+
+h1,
+h2,
+p {
+  text-align: center;
+}
+
+.red-overwrite,
+button.btn-primary.btn-lg.btn-block {
+  background: #CB201A !important;
+}
+
+.input, select{
+  border: 2px solid #ffd704;
+  border-radius: 3px;
+}
+
+select, .input, label {
+  width: 100%;
+}
+
+
+button.btn-primary.btn-lg.btn-block,
+a.navbar-brand {
+  color: #FFDE01;
+}
+
+footer.blockquote-footer {
+  color: black;
+}
+
+.quote {
+  font-family: sans-serif;
+  font-size: .8em;
+  color: rgb(155, 155, 155);
+  font-style: italic;
+  line-height: 1em;
+  text-align: center;
+}
+.social-link {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+  }
+  
+  .social-link:hover,
+  .social-link:focus {
+    background: #ddd;
+    text-decoration: none;
+    color: #555;
+  }
+
+  i.fa.fa-snowflake-o.fa-lg.text-primary.mr-2::before{
+    color: white;
+  }
+
+  .title{
+    display: flex;
+    justify-content: center;
+    margin:auto;  
+  }
+  .box{
+    padding: 5px;
+  }
+
+  .titleBox{
+    display: flex;
+    justify-content: center;
+  }
+
+  .ourteam{
+    align-items: center;
+    padding: 0;
+  }
+  .padding{
+    padding: 2px 2px;
+  }

@@ -1,0 +1,99 @@
+body,
+html {
+  height: 100%;
+}
+body {
+  text-align: center;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("https://live.staticflickr.com/65535/49161397362_a3742adb94_k.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  margin:auto; 
+}
+p {
+font-family:  'Lato', sans-serif;
+font-size: 20px;
+display: flex;
+justify-content: center;
+margin:auto; 
+}
+h1,
+h2,
+footer.blockquote-footer,
+a.navbar-brand,
+button.btn-primary.btn-lg.btn-block {
+  font-family: "Mountains of Christmas", cursive;
+}
+
+h1 {
+  font-size: 80px;
+}
+
+div.jumbotron {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0px;
+}
+
+
+div.card.border-primary.mb-3 {
+  margin: 0 auto;
+  padding: 0;
+}
+
+h1,
+h2,
+div.row.h-100.align-items-center.py-5 {
+  text-align: center;
+  
+}
+div.row.h-100.align-items-center.py-5 {
+padding: 0px;
+}
+.red-overwrite,
+button.btn-primary.btn-lg.btn-block {
+  background: #CB201A !important;
+}
+
+.input, select{
+  border: 2px solid #ffd704;
+  border-radius: 3px;
+}
+
+select, .input, label {
+  width: 100%;
+}
+
+
+button.btn-primary.btn-lg.btn-block,
+a.navbar-brand {
+  color: #FFDE01;
+}
+
+i.fa.fa-snowflake-o.fa-lg.text-primary.mr-2::before{
+    color: white;
+  }
+
+.text{
+  padding: 20px;
+}
+
+.texttwo{
+  padding: 1px;
+  display: flex;
+    justify-content: center;
+    margin:auto;  
+}
