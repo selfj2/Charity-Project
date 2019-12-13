@@ -8,7 +8,7 @@ import { MapInfoWindow, MapMarker } from "@angular/google-maps";
   templateUrl: "./result.component.html",
   styleUrls: ["./result.component.css"]
 })
-export class ResultComponent implements OnInit {
+export class ResultComponent implements AfterViewInit, OnInit {
   charityResults: any[] = [];
   // test: boolean = false;
 
