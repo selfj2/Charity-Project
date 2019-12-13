@@ -68,6 +68,7 @@ footer.blockquote-footer {
   display: block;
   margin: 0 auto;
   width: 50%;
+  margin-bottom: 200px;
 }
 
 i.fa.fa-snowflake-o.fa-lg.text-primary.mr-2::before{

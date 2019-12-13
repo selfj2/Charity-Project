@@ -1,4 +1,4 @@
-<body>
+
 <div class="bg">
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary red-overwrite">
@@ -32,10 +32,31 @@
       </div>
     </nav>
   
+    <div class="component-container" *ngIf="!charityResults[0]">
+      <!-- <h2>No results found</h2> -->
+      <!-- <img src="https://imageshack.com/a/img921/7250/11SNpq.gif" class="loading"> -->
+      <img src="https://imageshack.com/a/img922/9852/nLNOJK.gif" class="loading" />
+    </div>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <google-map
+          height="500px"
+          width="100%"
+          [zoom]="zoom"
+          [center]="center"
+          [options]="options"
+        >
+          <map-marker
+            *ngFor="let marker of markers"
+            [position]="marker.position"
+            [label]="marker.label"
+            [title]="marker.title"
+            [options]="marker.options"
+          >
+          </map-marker>
+        </google-map>
 
-<google-map></google-map>
 
-<div class="jumbotron">
 <div class="component-container" *ngIf = "charityResults">
   <div class="charity-results-container">
     <app-charity-item
@@ -44,13 +65,6 @@
     ></app-charity-item>
   </div>
 </div>
+</div>
+</div>
 
-<div class="component-container" *ngIf="!charityResults[0]">
-  <!-- <h2>No results found</h2> -->
-  <!-- <img src="https://imageshack.com/a/img921/7250/11SNpq.gif" class="loading"> -->
-  <img src="https://imageshack.com/a/img922/9852/nLNOJK.gif" class="loading" />
-</div>
-    </div>
-</div>
-</div>
-</body>
