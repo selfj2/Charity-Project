@@ -1,24 +1,26 @@
-import { Component, OnInit, AfterViewInit } from "@angular/core";
+import { Component, OnInit, AfterViewInit, ViewChild } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { ApiService } from "../api.service";
 import { MapInfoWindow, MapMarker } from "@angular/google-maps";
+
 @Component({
   selector: "app-result",
   templateUrl: "./result.component.html",
   styleUrls: ["./result.component.css"]
 })
 export class ResultComponent implements AfterViewInit, OnInit {
+  // @ViewChild(MapInfoWindow, { static: false }) infoWindow: MapInfoWindow;
+
+  infoContent = "";
+
   charityResults: any[] = [];
   geoAddress: any[];
-  // test: boolean = false;
   navbarOpen = false;
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;
   }
   constructor(private search: ApiService, private router: ActivatedRoute) {}
   ngOnInit() {
-    //this.getLatAndLng();
-    //this.getAddress();
     // Gets the parameters in the URL and uses them with the services method
     this.router.queryParams.subscribe(queryParams => {
       this.search.getData(queryParams).subscribe(data => {
@@ -85,6 +87,9 @@ export class ResultComponent implements AfterViewInit, OnInit {
   zoomOut() {
     if (this.zoom > this.options.minZoom) this.zoom--;
   }
+  click(event: google.maps.MouseEvent) {
+    console.log(event);
+  }
   markers: any[] = [];
   createMarker(data, charity) {
     if (!this.markers) this.markers = new Array();
@@ -128,9 +133,13 @@ export class ResultComponent implements AfterViewInit, OnInit {
       ];
     }
   }
+  // openInfo(marker: MapMarker, content) {
+  //   this.charity = content;
+  //   this.charity.open(marker);
+  // }
   openInfo(marker: MapMarker, content) {
-    this.charity = content;
-    this.charity.open(marker);
+    this.infoContent = content;
+    // this.infoWindow.open(marker);
   }
   ngOnChanges() {
     //this.createMarkers();

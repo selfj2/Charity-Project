@@ -1,105 +1,183 @@
 <body>
-    <div class="bg">
-        <div class="container">
-          <nav class="navbar navbar-expand-lg navbar-dark bg-primary red-overwrite">
-            <a href="#" class="navbar-brand d-flex align-items-center"> 
-            <i class="fa fa-snowflake-o fa-lg text-primary mr-2"></i><strong> Santa's Helpers</strong></a>
-            <button 
-            class="navbar-toggler" 
-            type="button" (click)="toggleNavbar()">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-
-    <div
-      class="collapse navbar-collapse"
-      id="navbarColor01"
-      [ngClass]="{ show: navbarOpen }"
-    >
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#"
-            >Home<span class="sr-only">(current)</span></a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/contact">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/about">About</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <div class="jumbotron">
-  <div class="p-3 mb-2 bg-transparent text-dark">
-    <div class="container py-5 padding">
-    <div class="row mb-4">
-        <div class="col-lg-5 title">
-          <h2 class="display-4 font-weight-bold">Our team</h2>
-          <!-- <p class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
-      </div>
-      </div>
+  <div class="bg">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary red-overwrite">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <i class="fa fa-snowflake-o fa-lg text-primary mr-2"></i
+          ><strong> Santa's Helpers</strong></a
+        >
+        <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse"
+          id="navbarColor01"
+          [ngClass]="{ show: navbarOpen }"
+        >
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"
+                >Home<span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/about">About</a>
+            </li>
+          </ul>
         </div>
-      <div class="row text-center">
-        <!-- Team item-->
-        <div class="col-xl-3 col-sm-6 mb-5">
-          <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556834132/avatar-4_ozhrib.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-            <h5 class="mb-0">Sarah Yi</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-            <ul class="social mb-0 list-inline mt-3">
-              <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-              <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-github"></i></a></li>
-              <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-envelope"></i></a></li>
-              <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-mobile-phone"></i></a></li>
-            </ul>
+      </nav>
+      <div class="jumbotron">
+        <div class="p-3 mb-2 bg-transparent text-dark">
+          <div class="container py-5 padding">
+            <div class="row mb-4">
+              <div class="col-lg-5 title">
+                <h2 class="display-4 font-weight-bold">Our team</h2>
+                <!-- <p class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
+              </div>
+            </div>
+          </div>
+          <div class="row text-center">
+            <!-- Team item-->
+            <div class="col-xl-3 col-sm-6 mb-5">
+              <div class="bg-white rounded shadow-sm py-5 px-4">
+                <img
+                  id="sarah"
+                  src="https://live.staticflickr.com/65535/49224135368_07d92fe4bd_k.jpg"
+                  alt=""
+                  width="100"
+                  class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
+                />
+                <h5 class="mb-0">Sarah Yi</h5>
+                <span class="small text-uppercase text-muted"></span>
+                <ul class="social mb-0 list-inline mt-3">
+                  <li class="list-inline-item">
+                    <a
+                      href="https://www.linkedin.com/in/saraheyi/"
+                      class="social-link"
+                      ><i class="fa fa-linkedin"></i
+                    ></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="https://github.com/sarah-yi" class="social-link"
+                      ><i class="fa fa-github"></i
+                    ></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="mailto:eumieyi@gmail.com" class="social-link"
+                      ><i class="fa fa-envelope"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- End-->
+            <!-- Team item-->
+            <div class="col-xl-3 col-sm-6 mb-5">
+              <div class="bg-white rounded shadow-sm py-5 px-4">
+                <img
+                  src="https://live.staticflickr.com/65535/49206583301_f3aefdd773_k.jpg"
+                  alt=""
+                  width="100"
+                  class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
+                />
+                <h5 class="mb-0">Miles Rose</h5>
+                <span class="small text-uppercase text-muted"></span>
+                <ul class="social mb-0 list-inline mt-3">
+                  <li class="list-inline-item">
+                    <a
+                      href="https://www.linkedin.com/in/miles-rose/"
+                      class="social-link"
+                      ><i class="fa fa-linkedin"></i
+                    ></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a
+                      href="https://github.com/MilesOfRoses"
+                      class="social-link"
+                      ><i class="fa fa-github"></i
+                    ></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="mailto:miles@milesrose.net" class="social-link"
+                      ><i class="fa fa-envelope"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- End-->
+            <!-- Team item-->
+            <div class="col-xl-3 col-sm-6 mb-5">
+              <div class="bg-white rounded shadow-sm py-5 px-4">
+                <img
+                  src="https://live.staticflickr.com/65535/49224428518_b4e15089e2_t.jpg"
+                  alt=""
+                  width="100"
+                  class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
+                />
+                <h5 class="mb-0">Oxana Fly</h5>
+                <span class="small text-uppercase text-muted"></span>
+                <ul class="social mb-0 list-inline mt-3">
+                  <li class="list-inline-item">
+                    <a
+                      href="https://www.linkedin.com/in/oxanafly/"
+                      class="social-link"
+                      ><i class="fa fa-linkedin"></i
+                    ></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="https://github.com/oxanaflyy" class="social-link"
+                      ><i class="fa fa-github"></i
+                    ></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="mailto:oxanafly@yahoo.com" class="social-link"
+                      ><i class="fa fa-envelope"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- End-->
+            <!-- Team item-->
+            <div class="col-xl-3 col-sm-6 mb-5">
+              <div class="bg-white rounded shadow-sm py-5 px-4">
+                <img
+                  src="https://live.staticflickr.com/65535/49224133913_3feb6721ff_t.jpg"
+                  alt=""
+                  width="100"
+                  class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
+                />
+                <h5 class="mb-0">Joel Self</h5>
+                <span class="small text-uppercase text-muted"></span>
+                <ul class="social mb-0 list-inline mt-3">
+                  <li class="list-inline-item">
+                    <a
+                      href="https://www.linkedin.com/in/joelsself/"
+                      class="social-link"
+                      ><i class="fa fa-linkedin"></i
+                    ></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="https://github.com/selfj2/" class="social-link"
+                      ><i class="fa fa-github"></i
+                    ></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="mailto:selfj2@gmail.com" class="social-link"
+                      ><i class="fa fa-envelope"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- End-->
           </div>
         </div>
-        <!-- End-->
-  
-        <!-- Team item-->
-        <div class="col-xl-3 col-sm-6 mb-5">
-          <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556834130/avatar-3_hzlize.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-            <h5 class="mb-0">Miles Rose</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-            <ul class="social mb-0 list-inline mt-3">
-                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-github"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-envelope"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-mobile-phone"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <!-- End-->
-  
-        <!-- Team item-->
-        <div class="col-xl-3 col-sm-6 mb-5">
-          <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556834133/avatar-2_f8dowd.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-            <h5 class="mb-0">Oxana Fly</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-            <ul class="social mb-0 list-inline mt-3">
-                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-github"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-envelope"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-mobile-phone"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <!-- End-->
-  
-        <!-- Team item-->
-        <div class="col-xl-3 col-sm-6 mb-5">
-          <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556834133/avatar-1_s02nlg.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-            <h5 class="mb-0">Joel Self</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-            <ul class="social mb-0 list-inline mt-3">
-                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-github"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-envelope"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-mobile-phone"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <!-- End-->
-  
       </div>
     </div>
   </div>
-     </div>
-  </div>    
 </body>

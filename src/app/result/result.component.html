@@ -47,6 +47,7 @@
           [zoom]="zoom"
           [center]="center"
           [options]="options"
+          (mapClick)="click($event)"
         >
           <map-marker
             *ngFor="let marker of markers"
@@ -54,8 +55,11 @@
             [label]="marker.label"
             [title]="marker.title"
             [options]="marker.options"
+            (mapClick)="openInfo(markerElem)"
           >
           </map-marker>
+
+          <map-info-window>{{ infoContent }}</map-info-window>
         </google-map>
 
         <div class="component-container" *ngIf="charityResults">

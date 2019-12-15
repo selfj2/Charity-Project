@@ -11,9 +11,5 @@ export class CharityItemComponent implements OnInit {
 
   constructor(private router: Router) {}
 
-  // goToCharityInfo() {
-  //   // this.router.navigate(["charity", this.charity.label]);
-  // }
-
   ngOnInit() {}
 }
