@@ -2,7 +2,6 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { ApiService } from "../api.service";
 import { MapInfoWindow, MapMarker } from "@angular/google-maps";
-
 @Component({
   selector: "app-result",
   templateUrl: "./result.component.html",
@@ -10,77 +9,106 @@ import { MapInfoWindow, MapMarker } from "@angular/google-maps";
 })
 export class ResultComponent implements AfterViewInit, OnInit {
   charityResults: any[] = [];
+  geoAddress: any[];
   // test: boolean = false;
-
   navbarOpen = false;
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;
   }
-
   constructor(private search: ApiService, private router: ActivatedRoute) {}
-
   ngOnInit() {
-    this.getLatAndLng();
-
-    // gets the parameters in the URL and uses them with the services method
+    //this.getLatAndLng();
+    //this.getAddress();
+    // Gets the parameters in the URL and uses them with the services method
     this.router.queryParams.subscribe(queryParams => {
       this.search.getData(queryParams).subscribe(data => {
         console.log(data);
         this.charityResults = data;
+        this.getAddress();
       });
     });
   }
-  // loop through the array for each address.
-
-  // loop through array and call this.get.latandlng for each item. pass through address
-
+  getAddress() {
+    // this.geoAddress = this.charityResults;
+    // array1.forEach(element => console.log(element));
+    for (let charity of this.charityResults) {
+      let address = charity.mailingAddress;
+      let addressString =
+        address.streetAddress1 +
+        "," +
+        address.city +
+        " " +
+        address.stateOrProvince +
+        "," +
+        address.postalCode;
+      this.getLatAndLng(addressString, charity);
+    }
+  }
+  // Loop through the array for each address.
+  // Loop through array and call this.get.latandlng for each item. Pass through address.
   charity: any;
-
   zoom = 12;
   center: google.maps.LatLngLiteral;
   options: google.maps.MapOptions = {
     mapTypeId: "hybrid",
-    zoomControl: false,
-    scrollwheel: false,
-    disableDoubleClickZoom: true,
+    //scrollwheel: false,
+    //disableDoubleClickZoom: true,
     maxZoom: 15,
     minZoom: 8
   };
-
+  //map = null;
+  /*map = new google.maps.Map(document.getElementById("map-component"), {
+    zoom: 4
+  });*/
   ngAfterViewInit() {
     navigator.geolocation.getCurrentPosition(position => {
       this.center = {
-        lat: 41.8781,
-        // position.coords.latitude,
-        lng: -87.623177
-        // position.coords.longitude
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
       };
     });
   }
-
   address: string = "28954 Farmington Rd. Farmington Hills, MI 48334";
-
-  getLatAndLng(address = this.address) {
+  getLatAndLng(address, charity) {
     console.log("LATLNG");
+    console.log(this);
     const geocoder = new google.maps.Geocoder();
     geocoder.geocode({ address }, (results: any, status) => {
-      console.log(results[0].geometry.location, status);
-      this.center = results[0].geometry.location;
+      console.log(this, results);
+      this.createMarker(results, charity);
     });
   }
-
   // this.center will change to what we're using to put markers on the map
-
   zoomIn() {
     if (this.zoom < this.options.maxZoom) this.zoom++;
   }
-
   zoomOut() {
     if (this.zoom > this.options.minZoom) this.zoom--;
   }
-
   markers: any[] = [];
-
+  createMarker(data, charity) {
+    if (!this.markers) this.markers = new Array();
+    let newMarker = {
+      position: {
+        lat: data[0].geometry.location.lat(),
+        lng: data[0].geometry.location.lng()
+      },
+      label: {
+        color: "black",
+        text: charity.mailingAddress.city
+      },
+      title: "Marker title",
+      info: "Marker info " + (this.markers.length + 1),
+      options: { animation: google.maps.Animation.BOUNCE }
+    };
+    if (this.markers.length == 0) {
+      this.center = newMarker.position;
+    }
+    console.log(data, newMarker);
+    this.markers.push(newMarker);
+    // newMarker["map"] = this.map;
+    let marker = new google.maps.Marker(newMarker);
+  }
   createMarkers() {
     if (this.charity && this.charity.data) {
       this.markers = [
@@ -100,13 +128,11 @@ export class ResultComponent implements AfterViewInit, OnInit {
       ];
     }
   }
-
   openInfo(marker: MapMarker, content) {
     this.charity = content;
     this.charity.open(marker);
   }
-
   ngOnChanges() {
-    this.createMarkers();
+    //this.createMarkers();
   }
 }
