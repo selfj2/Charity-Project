@@ -83,3 +83,9 @@ footer.blockquote-footer {
 i.fa.fa-snowflake-o.fa-lg.text-primary.mr-2::before {
   color: white;
 }
+#welcome {
+  padding-top: 48px;
+}
+.mb-0.quote {
+  color: black;
+}

@@ -125,3 +125,6 @@ footer.blockquote-footer {
   .padding{
     padding: 2px 2px;
   }
+  #team {
+    padding-bottom: 0 !important;
+  }

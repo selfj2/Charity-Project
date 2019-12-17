@@ -97,3 +97,6 @@ i.fa.fa-snowflake-o.fa-lg.text-primary.mr-2::before{
     justify-content: center;
     margin:auto;  
 }
+#santa{
+  padding: 0 !important;
+}
