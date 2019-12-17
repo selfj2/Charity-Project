@@ -1,7 +1,8 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { ApiService } from "../api.service";
-import { MapInfoWindow, MapMarker } from "@angular/google-maps";
+import { MapInfoWindow, MapMarker, GoogleMap } from "@angular/google-maps";
+import { title } from "process";
 
 @Component({
   selector: "app-result",
@@ -9,9 +10,12 @@ import { MapInfoWindow, MapMarker } from "@angular/google-maps";
   styleUrls: ["./result.component.css"]
 })
 export class ResultComponent implements AfterViewInit, OnInit {
-  // @ViewChild(MapInfoWindow, { static: false }) infoWindow: MapInfoWindow;
+  @ViewChild(GoogleMap, { static: false }) map: GoogleMap;
+  @ViewChild(MapInfoWindow, { static: false }) infoWindow: MapInfoWindow;
 
   infoContent = "";
+  title: "";
+  info = "";
 
   charityResults: any[] = [];
   geoAddress: any[];
@@ -31,8 +35,6 @@ export class ResultComponent implements AfterViewInit, OnInit {
     });
   }
   getAddress() {
-    // this.geoAddress = this.charityResults;
-    // array1.forEach(element => console.log(element));
     for (let charity of this.charityResults) {
       let address = charity.mailingAddress;
       let addressString =
@@ -48,6 +50,7 @@ export class ResultComponent implements AfterViewInit, OnInit {
   }
   // Loop through the array for each address.
   // Loop through array and call this.get.latandlng for each item. Pass through address.
+
   charity: any;
   zoom = 12;
   center: google.maps.LatLngLiteral;
@@ -80,6 +83,7 @@ export class ResultComponent implements AfterViewInit, OnInit {
       this.createMarker(results, charity);
     });
   }
+
   // this.center will change to what we're using to put markers on the map
   zoomIn() {
     if (this.zoom < this.options.maxZoom) this.zoom++;
@@ -102,8 +106,18 @@ export class ResultComponent implements AfterViewInit, OnInit {
         color: "black",
         text: charity.mailingAddress.city
       },
-      title: "Marker title",
-      info: "Marker info " + (this.markers.length + 1),
+      title: charity.charityName,
+      info:
+        charity.charityName +
+        ": " +
+        charity.mailingAddress.streetAddress1 +
+        ", " +
+        charity.mailingAddress.city +
+        ", " +
+        charity.mailingAddress.stateOrProvince +
+        ", " +
+        charity.mailingAddress.postalCode +
+        (this.markers.length + 1),
       options: { animation: google.maps.Animation.DROP }
     };
     if (this.markers.length == 0) {
@@ -133,15 +147,8 @@ export class ResultComponent implements AfterViewInit, OnInit {
       ];
     }
   }
-  // openInfo(marker: MapMarker, content) {
-  //   this.charity = content;
-  //   this.charity.open(marker);
-  // }
   openInfo(marker: MapMarker, content) {
     this.infoContent = content;
-    // this.infoWindow.open(marker);
-  }
-  ngOnChanges() {
-    //this.createMarkers();
+    this.infoWindow.open(marker);
   }
 }

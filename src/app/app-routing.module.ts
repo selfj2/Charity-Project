@@ -7,7 +7,7 @@ import { ContactComponent } from "./contact/contact.component";
 import { LandingPageComponent } from "./landing-page/landing-page.component";
 
 const routes: Routes = [
-  { path: "", redirectTo: "/search", pathMatch: "full" },
+  { path: "", redirectTo: "/landing", pathMatch: "full" },
   { path: "landing", component: LandingPageComponent },
   { path: "search", component: SearchComponent },
   { path: "about", component: AboutComponent },
