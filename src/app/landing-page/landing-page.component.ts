@@ -9,5 +9,9 @@ import { Router } from "@angular/router";
 export class LandingPageComponent implements OnInit {
   constructor(private router: Router) {}
 
+  btnClick = function() {
+    this.router.navigateByUrl("/search");
+  };
+
   ngOnInit() {}
 }

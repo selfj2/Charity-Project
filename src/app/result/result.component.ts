@@ -70,7 +70,7 @@ export class ResultComponent implements AfterViewInit, OnInit {
       };
     });
   }
-  address: string = "28954 Farmington Rd. Farmington Hills, MI 48334";
+  // address: string = "28954 Farmington Rd. Farmington Hills, MI 48334";
   getLatAndLng(address, charity) {
     console.log("LATLNG");
     console.log(this);
@@ -104,7 +104,7 @@ export class ResultComponent implements AfterViewInit, OnInit {
       },
       title: "Marker title",
       info: "Marker info " + (this.markers.length + 1),
-      options: { animation: google.maps.Animation.BOUNCE }
+      options: { animation: google.maps.Animation.DROP }
     };
     if (this.markers.length == 0) {
       this.center = newMarker.position;
@@ -128,7 +128,7 @@ export class ResultComponent implements AfterViewInit, OnInit {
           },
           title: "Marker title",
           info: "Marker info " + (this.markers.length + 1),
-          options: { animation: google.maps.Animation.BOUNCE }
+          options: { animation: google.maps.Animation.DROP }
         }
       ];
     }
