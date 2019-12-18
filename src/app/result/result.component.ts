@@ -3,7 +3,6 @@ import { ActivatedRoute } from "@angular/router";
 import { ApiService } from "../api.service";
 import { MapInfoWindow, MapMarker, GoogleMap } from "@angular/google-maps";
 import { title } from "process";
-
 @Component({
   selector: "app-result",
   templateUrl: "./result.component.html",
@@ -12,11 +11,9 @@ import { title } from "process";
 export class ResultComponent implements AfterViewInit, OnInit {
   @ViewChild(GoogleMap, { static: false }) map: GoogleMap;
   @ViewChild(MapInfoWindow, { static: false }) infoWindow: MapInfoWindow;
-
   infoContent = "";
   title: "";
   info = "";
-
   charityResults: any[] = [];
   geoAddress: any[];
   navbarOpen = false;
@@ -50,7 +47,6 @@ export class ResultComponent implements AfterViewInit, OnInit {
   }
   // Loop through the array for each address.
   // Loop through array and call this.get.latandlng for each item. Pass through address.
-
   charity: any;
   zoom = 12;
   center: google.maps.LatLngLiteral;
@@ -83,7 +79,6 @@ export class ResultComponent implements AfterViewInit, OnInit {
       this.createMarker(results, charity);
     });
   }
-
   // this.center will change to what we're using to put markers on the map
   zoomIn() {
     if (this.zoom < this.options.maxZoom) this.zoom++;
@@ -104,7 +99,7 @@ export class ResultComponent implements AfterViewInit, OnInit {
       },
       label: {
         color: "black",
-        text: charity.mailingAddress.city
+        text: charity.charityName
       },
       title: charity.charityName,
       info:
