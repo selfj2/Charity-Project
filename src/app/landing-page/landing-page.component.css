@@ -1,60 +1,29 @@
-@import url('https://fonts.googleapis.com/css?family=Mountains+of+Christmas&display=swap');
 
-​ ​ ​ @media only screen and (max-width: 768px) {
-  .image {
-    background: url(../Image/north-pole-lights.jpg);
-    align-self: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 90vh;
-    width: 100%;
-  }
-
-
-  .button-container {
-    width: 20%;
-    height: 15%;
-  }
-
-  ​ button {
-    background-color: #CB201A;
-    color: white;
-    font-size: xx-large;
-    width: 100%;
-    font-family: 'Mountains of Christmas', cursive, sans-serif;
-  }
-
-}
-
-​ .image {
-  background: url(../Image/BGdesktop.jpg);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+.bg {
+  background-image: url("https://live.staticflickr.com/65535/49236052157_0955cd6a19_k.jpg");
+  height: 900px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
-  height: 90vh;
-  width: 100%;
 }
 
-​ h1 {
-  color: #CB201A;
-  text-align: center;
-  text-shadow: 2px 2px white;
-  font-size: 4.5rem;
-  font-family: 'Mountains of Christmas', cursive, sans-serif;
-}
-
-​ .button-container {
+/* .button-container {
   width: 100%;
   height: 15%;
-}
+} */
 
 button {
   background-color: #CB201A;
   color: white;
   font-size: xx-large;
   width: 100%;
+  display: block;
   font-family: 'Mountains of Christmas', cursive, sans-serif;
+  position: fixed;
+  margin: 0 auto;
+  top: 80%;
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
 }
