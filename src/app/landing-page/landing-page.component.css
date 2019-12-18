@@ -13,7 +13,10 @@ button {
   background-color: #CB201A;
   color: white;
   font-size: xx-large;
-  width: 100%;
+  width: 40%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
   display: block;
   font-family: 'Mountains of Christmas', cursive, sans-serif;
   position: fixed;
@@ -127,5 +130,11 @@ button {
   }
   to {
     transform: rotate(10deg) translateY(0);
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  button {
+    width: 100%;
   }
 }
