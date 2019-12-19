@@ -1,7 +1,7 @@
 
 .bg {
   background-image: url("https://live.staticflickr.com/65535/49236052157_0955cd6a19_k.jpg");
-  height: 900px;
+  height: 100vh;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
