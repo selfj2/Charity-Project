@@ -151,8 +151,8 @@ export class ResultComponent implements AfterViewInit, OnInit {
       ];
     }
   }
-  openInfo(marker: MapMarker, info) {
-    this.infoContent = info;
+  openInfo(marker: MapMarker, content) {
+    this.infoContent = content;
     console.log(this.infoContent);
     this.infoWindow.open(marker);
   }
