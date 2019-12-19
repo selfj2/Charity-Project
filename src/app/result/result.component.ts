@@ -1,4 +1,10 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
+  ViewChild,
+  Input
+} from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { ApiService } from "../api.service";
 import { MapInfoWindow, MapMarker, GoogleMap } from "@angular/google-maps";
@@ -9,14 +15,26 @@ import { title } from "process";
   styleUrls: ["./result.component.css"]
 })
 export class ResultComponent implements AfterViewInit, OnInit {
+  @Input() charity: any;
   @ViewChild(GoogleMap, { static: false }) map: GoogleMap;
   @ViewChild(MapInfoWindow, { static: false }) infoWindow: MapInfoWindow;
   infoContent = "";
   title: "";
   info = "";
+
   charityResults: any[] = [];
   geoAddress: any[];
+
+  getUrl(charity) {
+    if (charity.websiteURL == true) {
+      return charity.websiteURL;
+    } else {
+      return charity.organization.charityNavigatorURL;
+    }
+  }
+
   navbarOpen = false;
+
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;
   }
@@ -47,20 +65,14 @@ export class ResultComponent implements AfterViewInit, OnInit {
   }
   // Loop through the array for each address.
   // Loop through array and call this.get.latandlng for each item. Pass through address.
-  charity: any;
   zoom = 12;
   center: google.maps.LatLngLiteral;
   options: google.maps.MapOptions = {
     mapTypeId: "hybrid",
-    //scrollwheel: false,
-    //disableDoubleClickZoom: true,
     maxZoom: 15,
     minZoom: 8
   };
-  //map = null;
-  /*map = new google.maps.Map(document.getElementById("map-component"), {
-    zoom: 4
-  });*/
+
   ngAfterViewInit() {
     navigator.geolocation.getCurrentPosition(position => {
       this.center = {
@@ -69,7 +81,6 @@ export class ResultComponent implements AfterViewInit, OnInit {
       };
     });
   }
-  // address: string = "28954 Farmington Rd. Farmington Hills, MI 48334";
   getLatAndLng(address, charity) {
     console.log("LATLNG");
     console.log(this);
@@ -97,22 +108,20 @@ export class ResultComponent implements AfterViewInit, OnInit {
         lat: data[0].geometry.location.lat(),
         lng: data[0].geometry.location.lng()
       },
-      label: {
-        color: "black",
-        text: charity.charityName
-      },
       title: charity.charityName,
-      info:
-        charity.charityName +
-        ": " +
-        charity.mailingAddress.streetAddress1 +
-        ", " +
-        charity.mailingAddress.city +
-        ", " +
-        charity.mailingAddress.stateOrProvince +
-        ", " +
-        charity.mailingAddress.postalCode +
-        (this.markers.length + 1),
+      // info:
+      //   charity.charityName +
+      //   ": " +
+      //   charity.mailingAddress.streetAddress1 +
+      //   ", " +
+      //   charity.mailingAddress.city +
+      //   ", " +
+      //   charity.mailingAddress.stateOrProvince +
+      //   ", " +
+      //   charity.mailingAddress.postalCode +
+      //   // this.getUrl(charity) +
+      //   (this.markers.length + 1),
+      info: { ...charity },
       options: { animation: google.maps.Animation.DROP }
     };
     if (this.markers.length == 0) {
@@ -142,8 +151,9 @@ export class ResultComponent implements AfterViewInit, OnInit {
       ];
     }
   }
-  openInfo(marker: MapMarker, content) {
-    this.infoContent = content;
+  openInfo(marker: MapMarker, info) {
+    this.infoContent = info;
+    console.log(this.infoContent);
     this.infoWindow.open(marker);
   }
 }

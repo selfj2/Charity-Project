@@ -33,8 +33,6 @@
     </nav>
 
     <div class="component-container" *ngIf="!charityResults[0]">
-      <!-- <h2>No results found</h2> -->
-      <!-- <img src="https://imageshack.com/a/img921/7250/11SNpq.gif" class="loading"> -->
       <img
         src="https://imageshack.com/a/img922/9852/nLNOJK.gif"
         class="loading"
@@ -60,8 +58,16 @@
             (mapClick)="openInfo(markerElem, marker.info)"
           >
           </map-marker>
-
-          <map-info-window>{{ infoContent }}</map-info-window>
+          <!-- <div class="info-container" *ngIf="charity"> -->
+          <map-info-window *ngIf="infoContent">
+            <p class="info-name">{{ infoContent.charityName }}</p>
+            <p class="info">
+              {{ infoContent.mailingAddress.streetAddress1 }}/
+              {{ infoContent.mailingAddress.city }}/
+              {{ infoContent.mailingAddress.stateOrProvince }}/
+              {{ infoContent.mailingAddress.postalCode }}/
+            </p>
+          </map-info-window>
         </google-map>
 
         <div class="component-container" *ngIf="charityResults">

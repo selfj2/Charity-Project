@@ -1,5 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css?family=Mountains+of+Christmas&display=swap'); */
-
 body,
 html {
   height: 100%;
@@ -36,7 +34,7 @@ div.jumbotron {
   padding: 15px;
 }
 
-.container{
+.container {
   z-index: 2;
   position: relative;
 }
@@ -88,9 +86,11 @@ footer.blockquote-footer {
 i.fa.fa-snowflake-o.fa-lg.text-primary.mr-2::before {
   color: white;
 }
+
 #welcome {
   padding-top: 48px;
 }
+
 .mb-0.quote {
   color: black;
 }
@@ -201,6 +201,7 @@ i.fa.fa-snowflake-o.fa-lg.text-primary.mr-2::before {
   from {
     transform: rotate(10deg) translateY(-100vh);
   }
+
   to {
     transform: rotate(10deg) translateY(0);
   }

@@ -107,8 +107,4 @@ export class SearchComponent implements OnInit {
       }
     });
   }
-
-  // getCity(input: any) {
-  //   if()
-  // }
 }

@@ -1,5 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css?family=Mountains+of+Christmas&display=swap'); */
-
 body,
 html {
   height: 100%;
@@ -52,6 +50,21 @@ a.navbar-brand {
   color: #FFDE01;
 }
 
+map-info-window {
+  display: flex;
+  flex-wrap: wrap;
+  width: 175px;
+}
+
+.info-name {
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.info {
+  font-family: sans-serif;
+}
+
 footer.blockquote-footer {
   color: black;
 }
@@ -75,7 +88,7 @@ i.fa.fa-snowflake-o.fa-lg.text-primary.mr-2::before {
 }
 
 
-.container{
+.container {
   z-index: 2;
   position: relative;
 }
@@ -183,6 +196,7 @@ i.fa.fa-snowflake-o.fa-lg.text-primary.mr-2::before {
   from {
     transform: rotate(10deg) translateY(-100vh);
   }
+
   to {
     transform: rotate(10deg) translateY(0);
   }
