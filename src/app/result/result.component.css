@@ -73,3 +73,123 @@ footer.blockquote-footer {
 i.fa.fa-snowflake-o.fa-lg.text-primary.mr-2::before {
   color: white;
 }
+
+
+.container{
+  z-index: 2;
+  position: relative;
+}
+
+/* snow stuff */
+
+.snow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  animation: snow-direction cubic-bezier(0.445, 0, 0.55, 1) 4s both alternate infinite;
+}
+
+
+.snow:before,
+.snow:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #e6e6e6;
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: snow 10s linear infinite;
+  box-shadow:
+    -5vw 10vh #e6e6e6,
+    30vw 5vh #e6e6e6,
+    55vw 5vh #e6e6e6,
+    75vw 10vh #e6e6e6,
+    105vw 15vh #e6e6e6,
+    -10vw 30vh #e6e6e6,
+    40vw 25vh #e6e6e6,
+    60vw 20vh #e6e6e6,
+    90vw 25vh #e6e6e6,
+    20vw 40vh #e6e6e6,
+    5vw 45vh #e6e6e6,
+    65vw 45vh #e6e6e6,
+    105vw 40vh #e6e6e6,
+    50vw 50vh #e6e6e6,
+    30vw 50vh #e6e6e6,
+    10vw 55vh #e6e6e6,
+    20vw 60vh #e6e6e6,
+    40vw 65vh #e6e6e6,
+    60vw 60vh #e6e6e6,
+    80vw 65vh #e6e6e6,
+    5vw 70vh #e6e6e6,
+    30vw 75vh #e6e6e6,
+    55vw 85vh #e6e6e6,
+    75vw 80vh #e6e6e6,
+    105vw 75vh #e6e6e6,
+    20vw 90vh #e6e6e6,
+    -5vw 95vh #e6e6e6,
+    65vw 95vh #e6e6e6,
+    100vw 90vh #e6e6e6,
+
+    -5vw 110vh #e6e6e6,
+    30vw 105vh #e6e6e6,
+    55vw 105vh #e6e6e6,
+    75vw 110vh #e6e6e6,
+    105vw 115vh #e6e6e6,
+    -10vw 130vh #e6e6e6,
+    40vw 125vh #e6e6e6,
+    60vw 120vh #e6e6e6,
+    90vw 125vh #e6e6e6,
+    20vw 140vh #e6e6e6,
+    5vw 145vh #e6e6e6,
+    65vw 145vh #e6e6e6,
+    105vw 140vh #e6e6e6,
+    50vw 150vh #e6e6e6,
+    30vw 150vh #e6e6e6,
+    10vw 155vh #e6e6e6,
+    20vw 160vh #e6e6e6,
+    40vw 165vh #e6e6e6,
+    60vw 160vh #e6e6e6,
+    80vw 165vh #e6e6e6,
+    5vw 170vh #e6e6e6,
+    30vw 175vh #e6e6e6,
+    55vw 185vh #e6e6e6,
+    75vw 180vh #e6e6e6,
+    105vw 175vh #e6e6e6,
+    20vw 190vh #e6e6e6,
+    -5vw 195vh #e6e6e6,
+    65vw 195vh #e6e6e6,
+    100vw 190vh #e6e6e6;
+}
+
+.snow:after {
+  left: 50px;
+  top: 60px;
+  animation-duration: 6s;
+  width: 8px;
+  height: 8px;
+  opacity: 0.7;
+  filter: blur(3px);
+}
+
+@keyframes snow {
+  from {
+    transform: rotate(10deg) translateY(-100vh);
+  }
+  to {
+    transform: rotate(10deg) translateY(0);
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  button {
+    width: 100%;
+  }
+}
